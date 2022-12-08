@@ -1,7 +1,7 @@
 import json
 import os
 import requests
-from s3_bucket import create_bucket, upload_to_bucket
+from s3_bucket import upload_to_bucket
 
 
 TOKEN = os.environ.get('TELEGRAMAPI')

@@ -2,7 +2,7 @@ import os
 import re
 from telegram import tel_parse_get_message, tel_send_message, tel_upload_file, parse_message
 from textract import extract_text
-from s3_bucket import create_bucket, upload_to_bucket
+from s3_bucket import upload_to_bucket
 from flask import Flask, jsonify, make_response, request, Response
 
 
