@@ -33,6 +33,7 @@ def tel_parse_get_message(message):
     try:
         g_chat_id = message['message']['chat']['id']
         g_file_id = message['message']['photo'][-1]['file_id']
+        g_update_id = message['update_id']
         print("g_chat_id-->", g_chat_id)
         print("g_image_id-->", g_file_id)
 
@@ -41,7 +42,7 @@ def tel_parse_get_message(message):
         # print("NO file found found-->>")
         g_file_id = "notfound"
         g_chat_id = "notfound"
-        return g_file_id, g_chat_id
+        return g_file_id, g_chat_id, g_update_id
 
 
 def tel_upload_file(file_id):

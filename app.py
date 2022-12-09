@@ -21,7 +21,7 @@ def index():
         get_file_name = ''
         msg = request.get_json()
         try:
-            file_id, chat_id = tel_parse_get_message(msg)
+            file_id, chat_id, update_id = tel_parse_get_message(msg)
             if file_id != 'notfound':
                 print('checking file id')
                 print(file_id)
@@ -34,10 +34,10 @@ def index():
                 tel_send_message(chat_id, kvs)
                 tel_send_message(chat_id, get_value)
                 try:
-                    insert_expense(str(chat_id), get_value[1][0])
-                    print('get value')
-                    print(get_value[1][0])
-                    print('get value')
+                    insert_expense(str(update_id[0]), get_value[1][0])
+                    print('update id')
+                    print(update_id[0])
+                    print('update id')
                 except Exception as e:
                     print(e)
             else:
