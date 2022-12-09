@@ -35,6 +35,9 @@ def index():
                 tel_send_message(chat_id, get_value)
                 try:
                     insert_expense(str(chat_id), get_value[1][0])
+                    print('get value')
+                    print(get_value[1][0])
+                    print('get value')
                 except Exception as e:
                     print(e)
             else:
