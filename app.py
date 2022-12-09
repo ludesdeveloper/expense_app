@@ -3,6 +3,7 @@ import re
 from telegram import tel_parse_get_message, tel_send_message, tel_upload_file, parse_message
 from textract import extract_text
 from s3_bucket import upload_to_bucket
+from dynamodb import insert_expense
 from flask import Flask, jsonify, make_response, request, Response
 
 
@@ -32,6 +33,10 @@ def index():
                     bucket_name, get_file_name, search_key)
                 tel_send_message(chat_id, kvs)
                 tel_send_message(chat_id, get_value)
+                try:
+                    insert_expense(chat_id, get_value)
+                except Exception as e:
+                    print(e)
             else:
                 chat_id, txt = parse_message(msg)
                 if txt == "hi":
