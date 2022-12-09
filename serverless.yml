@@ -40,10 +40,10 @@ provider:
           Resource:
             - Fn::GetAtt: [ExpenseTable, Arn]
   environment:
-    USERS_TABLE: ${self:custom.tableName}
+    EXPENSE_TABLE: ${self:custom.tableName}
 
 functions:
-  document-to-text:
+  expense-app:
     handler: wsgi_handler.handler
     url: true
 
@@ -53,14 +53,14 @@ plugins:
 
 resources:
   Resources:
-    UsersTable:
+    ExpenseTable:
       Type: AWS::DynamoDB::Table
       Properties:
         AttributeDefinitions:
-          - AttributeName: userId
+          - AttributeName: expenseId
             AttributeType: S
         KeySchema:
-          - AttributeName: userId
+          - AttributeName: expenseId
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
         TableName: ${self:custom.tableName}
