@@ -1,6 +1,6 @@
 org: funguardian
-app: document-to-text
-service: document-to-text
+app: expense-app
+service: expense-app
 
 frameworkVersion: "3"
 
