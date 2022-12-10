@@ -37,11 +37,8 @@ def tel_parse_get_message(message):
         caption = message['message']['caption']
         print("g_chat_id-->", g_chat_id)
         print("g_image_id-->", g_file_id)
-        print('check text')
-        print(caption)
-        print('check text')
 
-        return g_file_id, g_chat_id, g_update_id
+        return g_file_id, g_chat_id, g_update_id, caption
     # except:
     except Exception as e:
         print(e)
@@ -49,7 +46,8 @@ def tel_parse_get_message(message):
         g_file_id = "notfound"
         g_chat_id = "notfound"
         g_update_id = "notfound"
-        return g_file_id, g_chat_id, g_update_id
+        caption = "notfound"
+        return g_file_id, g_chat_id, g_update_id, caption
 
 
 def tel_upload_file(file_id):
