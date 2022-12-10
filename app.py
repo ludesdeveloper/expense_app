@@ -30,7 +30,7 @@ def index():
                     bucket_name, get_file_name, search_key)
                 tel_send_message(chat_id, kvs)
                 tel_send_message(chat_id, get_value)
-               try:
+                try:
                     insert_expense(str(update_id), get_value[1][0], caption)
                 except Exception as e:
                     print(e)
