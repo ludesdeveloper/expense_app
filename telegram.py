@@ -71,7 +71,7 @@ def tel_upload_file(file_id):
             f.write(file_content)
     except Exception as e:
         print(e)
-    bucket_name = '123textract123'
+    bucket_name = os.environ.get('BUCKET_NAME')
     get_file_name = json_resp['result']['file_path']
     get_file_name = get_file_name.split('/')
     get_file_name = get_file_name[1]
