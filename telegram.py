@@ -11,8 +11,6 @@ def parse_message(message):
     print("message-->", message)
     chat_id = message['message']['chat']['id']
     txt = message['message']['text']
-    print("chat_id-->", chat_id)
-    print("txt-->", txt)
     return chat_id, txt
 
 
@@ -40,14 +38,11 @@ def tel_parse_get_message(message):
             print(caption)
         except:
             caption = 'notfound'
-        print("g_chat_id-->", g_chat_id)
-        print("g_image_id-->", g_file_id)
 
         return g_file_id, g_chat_id, g_update_id, caption
     # except:
     except Exception as e:
         print(e)
-        # print("NO file found found-->>")
         g_file_id = "notfound"
         g_chat_id = "notfound"
         g_update_id = "notfound"
@@ -62,7 +57,6 @@ def tel_upload_file(file_id):
     print("a-->", a)
     print("json_resp-->", json_resp)
     file_pathh = json_resp['result']['file_path']
-    print("file_path-->", file_pathh)
 
     url_1 = f'https://api.telegram.org/file/bot{TOKEN}/{file_pathh}'
     b = requests.get(url_1)

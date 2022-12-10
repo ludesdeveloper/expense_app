@@ -30,10 +30,7 @@ def index():
                     bucket_name, get_file_name, search_key)
                 tel_send_message(chat_id, kvs)
                 tel_send_message(chat_id, get_value)
-                print('debug caption')
-                print(caption)
-                print('debug caption')
-                try:
+               try:
                     insert_expense(str(update_id), get_value[1][0], caption)
                 except Exception as e:
                     print(e)
@@ -43,7 +40,6 @@ def index():
                     tel_send_message(chat_id, "Hello!!")
         except Exception as e:
             print(e)
-            # print("from index-->")
         return Response('ok', status=200)
     else:
         return "<h1>Welcome!</h1>"
