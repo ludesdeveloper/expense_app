@@ -41,8 +41,9 @@ def index():
                 chat_id, txt = parse_message(msg)
                 if txt == "hi":
                     tel_send_message(chat_id, "Hello!!")
-        except:
-            print("from index-->")
+        except Exception as e:
+            print(e)
+            # print("from index-->")
         return Response('ok', status=200)
     else:
         return "<h1>Welcome!</h1>"
