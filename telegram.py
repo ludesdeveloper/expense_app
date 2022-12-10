@@ -35,6 +35,9 @@ def tel_parse_get_message(message):
         g_file_id = message['message']['photo'][-1]['file_id']
         g_update_id = message['update_id']
         caption = message['message']['caption']
+        print('debug caption')
+        print(caption)
+        print('debug caption')
         print("g_chat_id-->", g_chat_id)
         print("g_image_id-->", g_file_id)
 
