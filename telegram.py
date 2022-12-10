@@ -36,6 +36,7 @@ def tel_parse_get_message(message):
         g_update_id = message['update_id']
         try:
             caption = message['message']['caption']
+            print(caption)
         except Exception as e:
             print(e)
         print('debug caption')
