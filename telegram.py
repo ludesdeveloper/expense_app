@@ -34,7 +34,10 @@ def tel_parse_get_message(message):
         g_chat_id = message['message']['chat']['id']
         g_file_id = message['message']['photo'][-1]['file_id']
         g_update_id = message['update_id']
-        caption = message['message']['caption']
+        try:
+            caption = message['message']['caption']
+        except Exception as e:
+            print(e)
         print('debug caption')
         print(caption)
         print('debug caption')
