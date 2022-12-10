@@ -35,11 +35,11 @@ def index():
                 tel_send_message(chat_id, get_value)
                 try:
                     print('debug')
-                    print(update_id[0])
+                    print(update_id)
                     print('debug')
-                    insert_expense(str(update_id[0]), get_value[1][0])
+                    insert_expense(str(update_id), get_value[1][0])
                     print('update id')
-                    print(update_id[0])
+                    print(update_id)
                     print('update id')
                 except Exception as e:
                     print(e)
