@@ -21,7 +21,7 @@ def index():
         get_file_name = ''
         msg = request.get_json()
         try:
-            file_id, chat_id, update_id = tel_parse_get_message(msg)
+            file_id, chat_id, update_id, caption = tel_parse_get_message(msg)
             if file_id != 'notfound':
                 get_file_name = tel_upload_file(file_id)
                 bucket_name = os.environ.get('BUCKET_NAME')
@@ -31,7 +31,7 @@ def index():
                 tel_send_message(chat_id, kvs)
                 tel_send_message(chat_id, get_value)
                 try:
-                    insert_expense(str(update_id), get_value[1][0])
+                    insert_expense(str(update_id), get_value[1][0], caption)
                 except Exception as e:
                     print(e)
             else:
