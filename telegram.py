@@ -34,11 +34,11 @@ def tel_parse_get_message(message):
         g_chat_id = message['message']['chat']['id']
         g_file_id = message['message']['photo'][-1]['file_id']
         g_update_id = message['update_id']
-        txt = message['message']['text']
+        caption = message['message']['caption']
         print("g_chat_id-->", g_chat_id)
         print("g_image_id-->", g_file_id)
         print('check text')
-        print(txt)
+        print(caption)
         print('check text')
 
         return g_file_id, g_chat_id, g_update_id
