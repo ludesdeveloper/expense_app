@@ -23,9 +23,6 @@ def index():
         try:
             file_id, chat_id, update_id = tel_parse_get_message(msg)
             if file_id != 'notfound':
-                print('checking file id')
-                print(file_id)
-                print('checking file id')
                 get_file_name = tel_upload_file(file_id)
                 bucket_name = os.environ.get('BUCKET_NAME')
                 search_key = 'total'
@@ -34,13 +31,7 @@ def index():
                 tel_send_message(chat_id, kvs)
                 tel_send_message(chat_id, get_value)
                 try:
-                    print('debug')
-                    print(update_id)
-                    print('debug')
                     insert_expense(str(update_id), get_value[1][0])
-                    print('update id')
-                    print(update_id)
-                    print('update id')
                 except Exception as e:
                     print(e)
             else:
