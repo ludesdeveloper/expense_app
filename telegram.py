@@ -38,7 +38,9 @@ def tel_parse_get_message(message):
         print("g_image_id-->", g_file_id)
 
         return g_file_id, g_chat_id, g_update_id
-    except:
+    # except:
+    except Exception as e:
+        print(e)
         # print("NO file found found-->>")
         g_file_id = "notfound"
         g_chat_id = "notfound"
