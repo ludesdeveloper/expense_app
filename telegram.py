@@ -44,7 +44,8 @@ def tel_parse_get_message(message):
         # print("NO file found found-->>")
         g_file_id = "notfound"
         g_chat_id = "notfound"
-        return g_file_id, g_chat_id
+        g_update_id = "notfound"
+        return g_file_id, g_chat_id, g_update_id
 
 
 def tel_upload_file(file_id):
