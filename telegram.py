@@ -35,18 +35,15 @@ def tel_parse_get_message(message):
         g_update_id = message['update_id']
         caption = ''
         date = message['message']['date']
-        date_time_obj = datetime.datetime.utcfromtimestamp(date)
-        date_time_obj = date_time_obj.strftime('%Y-%m-%d %H:%M:%S')
-        print('debug date')
-        print(date_time_obj)
-        print('debug date')
+        date = datetime.datetime.utcfromtimestamp(date)
+        date = date.strftime('%Y-%m-%d %H:%M:%S')
         try:
             caption = message['message']['caption']
             print(caption)
         except:
             caption = 'notfound'
 
-        return g_file_id, g_chat_id, g_update_id, caption
+        return g_file_id, g_chat_id, g_update_id, caption, date
     # except:
     except Exception as e:
         print(e)
@@ -54,7 +51,8 @@ def tel_parse_get_message(message):
         g_chat_id = "notfound"
         g_update_id = "notfound"
         caption = "notfound"
-        return g_file_id, g_chat_id, g_update_id, caption
+        date = "notfound"
+        return g_file_id, g_chat_id, g_update_id, caption, date
 
 
 def tel_upload_file(file_id):
