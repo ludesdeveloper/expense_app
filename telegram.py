@@ -33,7 +33,7 @@ def tel_parse_get_message(message):
         g_file_id = message['message']['photo'][-1]['file_id']
         g_update_id = message['update_id']
         caption = ''
-        date = message['date']
+        date = message['message']['date']
         print('debug message date')
         print(date)
         print('debug message date')
