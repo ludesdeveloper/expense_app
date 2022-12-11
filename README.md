@@ -1,4 +1,8 @@
 # Expense Chat Bot App
+<p align="center">
+<img src="pic/ludes.png" width="500">
+</p>
+
 ### **Requirements**
 1. [Serverless Framework](https://www.serverless.com/framework/docs/getting-started) installed
 2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html) configured
