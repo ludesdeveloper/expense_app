@@ -35,7 +35,8 @@ def tel_parse_get_message(message):
         g_update_id = message['update_id']
         caption = ''
         date = message['message']['date']
-        date = datetime.datetime.fromtimestamp(date)
+        date = datetime.datetime.fromtimestamp(
+            date) + datetime.timedelta(hours=7)
         date = date.strftime('%Y-%m-%d %H:%M:%S')
         try:
             caption = message['message']['caption']
