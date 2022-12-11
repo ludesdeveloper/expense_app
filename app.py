@@ -18,7 +18,6 @@ def resource_not_found(e):
 @app.route('/telegram_receipt_reader', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        # get_file_name = ''
         msg = request.get_json()
         try:
             file_id, chat_id, update_id, caption, date = tel_parse_get_message(
