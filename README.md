@@ -4,10 +4,12 @@
 </p>
 
 ### **Diagram**
-<!-- ![test](pic/diagram.png) -->
 ```mermaid
 flowchart LR
     Telegram_Bot-- Trigger via REST -->Lambda_Function
+    Lambda_Function-- Upload file --> S3
+    Lambda_Function-- Analyze file --> Textract
+    Lambda_Function-- Write/Read DB --> DynamoDB
 ```
 ### **Requirements**
 1. [Serverless Framework](https://www.serverless.com/framework/docs/getting-started) installed
