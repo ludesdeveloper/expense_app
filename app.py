@@ -3,7 +3,7 @@ import re
 from telegram import tel_parse_get_message, tel_send_message, tel_upload_file, parse_message
 from textract import extract_text
 from s3_bucket import upload_to_bucket
-from dynamodb import insert_expense, today_expense
+from dynamodb import insert_expense, range_expense
 from flask import Flask, jsonify, make_response, request, Response
 
 
@@ -40,9 +40,10 @@ def index():
                 chat_id, txt = parse_message(msg)
                 if txt == "hi":
                     tel_send_message(chat_id, "Hello!!")
-                elif txt == "today":
-                    get_today_expense = today_expense()
+                elif txt == "range":
+                    get_today_expense = range_expense()
                     tel_send_message(chat_id, get_today_expense)
+                    print(txt.split(' '))
 
         except Exception as e:
             print(e)

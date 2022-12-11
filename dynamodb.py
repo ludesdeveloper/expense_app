@@ -14,19 +14,15 @@ def insert_expense(expense_id, total, source, date):
     )
 
 
-def today_expense():
-    today = datetime.datetime.today() + datetime.timedelta(hours=7)
-    nextday = datetime.datetime.today() + datetime.timedelta(hours=7) + \
+def range_expense():
+    start = datetime.datetime.today() + datetime.timedelta(hours=7)
+    end = datetime.datetime.today() + datetime.timedelta(hours=7) + \
         datetime.timedelta(days=1)
-    today = today.strftime('%Y-%m-%d')
-    nextday = nextday.strftime('%Y-%m-%d')
-    print('debug date')
-    print(today)
-    print(nextday)
-    print('debug date')
+    start = start.strftime('%Y-%m-%d')
+    end = end.strftime('%Y-%m-%d')
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table(EXPENSE_TABLE)
     response = table.scan(FilterExpression=Attr(
-        'date').between(f'{today} 00:00:00', f'{nextday} 00:00:00'))
+        'date').between(f'{start} 00:00:00', f'{end} 00:00:00'))
     data = response['Items']
     return data
