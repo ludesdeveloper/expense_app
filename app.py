@@ -42,9 +42,10 @@ def index():
                     tel_send_message(chat_id, "Hello!!")
                 elif "range" in txt:
                     get_range = txt.split(' ')
-                    get_today_expense = range_expense(
+                    get_range_expense, sum_total = range_expense(
                         get_range[1], get_range[2])
-                    tel_send_message(chat_id, get_today_expense)
+                    tel_send_message(chat_id, get_range_expense)
+                    tel_send_message(chat_id, f'Total : {sum_total}')
 
         except Exception as e:
             print(e)

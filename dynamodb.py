@@ -25,4 +25,14 @@ def range_expense(start, end):
     response = table.scan(FilterExpression=Attr(
         'date').between(f'{start} 00:00:00', f'{end} 00:00:00'))
     data = response['Items']
-    return data
+    get_total = []
+    for i in data:
+        try:
+            total = i['total']
+            total = total.split(',')
+            total = ''.join(total)
+            get_total.append(int(total))
+        except Exception as e:
+            print(e)
+    sum_total = sum(get_total)
+    return data, sum_total
