@@ -21,10 +21,10 @@ def index():
         msg = request.get_json()
         try:
             check_userid = msg['message']['chat']['username']
+            print(f'userid detected: {check_userid}')
             TELEGRAMUSERID = os.environ.get('TELEGRAMUSERID')
             if check_userid != TELEGRAMUSERID:
                 print('userid is not authorized')
-                print(check_userid)
                 return "<h1>Not Authorized</h1>"
             file_id, chat_id, update_id, caption, date = tel_parse_get_message(
                 msg)
