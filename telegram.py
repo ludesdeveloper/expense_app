@@ -1,3 +1,4 @@
+import datetime
 import json
 import os
 import requests
@@ -34,9 +35,11 @@ def tel_parse_get_message(message):
         g_update_id = message['update_id']
         caption = ''
         date = message['message']['date']
-        print('debug message date')
-        print(date)
-        print('debug message date')
+        date_time_obj = datetime.datetime.utcfromtimestamp(date)
+        date_time_obj = date_time_obj.strftime('%Y-%m-%d %H:%M:%S')
+        print('debug date')
+        print(date_time_obj)
+        print('debug date')
         try:
             caption = message['message']['caption']
             print(caption)
