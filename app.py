@@ -20,9 +20,11 @@ def index():
     if request.method == 'POST':
         msg = request.get_json()
         try:
-            print('debug username')
-            print(msg['message']['chat']['username'])
-            print('debug username')
+            check_userid = msg['message']['chat']['username']
+            TELEGRAMUSERID = os.environ.get('TELEGRAMUSERID')
+            if check_userid != TELEGRAMUSERID:
+                print('userid is not authorized')
+                return "<h1>Not Authorized</h1>"
             file_id, chat_id, update_id, caption, date = tel_parse_get_message(
                 msg)
             if file_id != 'notfound':
