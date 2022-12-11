@@ -41,9 +41,10 @@ def index():
                 if txt == "hi":
                     tel_send_message(chat_id, "Hello!!")
                 elif "range" in txt:
-                    get_today_expense = range_expense()
+                    get_range = txt.split(' ')
+                    get_today_expense = range_expense(
+                        get_range[1], get_range[2])
                     tel_send_message(chat_id, get_today_expense)
-                    print(txt.split(' '))
 
         except Exception as e:
             print(e)
