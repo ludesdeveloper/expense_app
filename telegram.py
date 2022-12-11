@@ -40,7 +40,6 @@ def tel_parse_get_message(message):
         date = date.strftime('%Y-%m-%d %H:%M:%S')
         try:
             caption = message['message']['caption']
-            print(caption)
         except:
             caption = 'notfound'
 
