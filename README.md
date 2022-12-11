@@ -37,6 +37,7 @@ sls
 1. Open your AWS Lambda Console, and go to Function -> Your Function -> Configuration -> Environment Variable
 2. Create new Environment Variable with key TELEGRAMAPI, and for value is your bot api token
 3. Create new Environment Variable with key BUCKET_NAME, and for value is your bucket name
+4. Create new Environment Variable with key TELEGRAMUSERID, and for value is your userid
 ### **Interraction With Bot**
 1. You can say hi to and bot will return "Hello!!"
 ```
