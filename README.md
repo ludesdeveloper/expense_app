@@ -10,6 +10,7 @@ flowchart LR
     Lambda_Function-- Upload file --> S3
     Lambda_Function-- Analyze file --> Textract
     Lambda_Function-- Write/Read DB --> DynamoDB
+    Textract-- Read file --> S3
 ```
 ### **Requirements**
 1. [Serverless Framework](https://www.serverless.com/framework/docs/getting-started) installed
