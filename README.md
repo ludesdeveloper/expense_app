@@ -8,7 +8,7 @@
 ```mermaid
 flowchart LR
     Start --> Stop
-    Telegram Bot-- text -->Lambda Function
+    Telegram_Bot-- text -->Lambda_Function
 ```
 ### **Requirements**
 1. [Serverless Framework](https://www.serverless.com/framework/docs/getting-started) installed
