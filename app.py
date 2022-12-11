@@ -20,6 +20,9 @@ def index():
     if request.method == 'POST':
         msg = request.get_json()
         try:
+            print('debug username')
+            print(msg['message']['chat']['username'])
+            print('debug username')
             file_id, chat_id, update_id, caption, date = tel_parse_get_message(
                 msg)
             if file_id != 'notfound':
