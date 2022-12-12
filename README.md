@@ -3,6 +3,8 @@
 <img src="pic/ludes.png" width="500">
 </p>
 
+### **Before Begin**
+> I recommend to check pricing for Lambda, S3, Textract, and DynamoDB, because there is possibility you will getting charge for what you used
 ### **Diagram**
 ```mermaid
 flowchart LR
