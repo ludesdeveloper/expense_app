@@ -64,3 +64,10 @@ hi
 range 2022-12-11 2022-12-12
 ```
 > This example to get range in 11 December 2022
+### **Preview**
+You can take a look preview [here](https://www.linkedin.com/posts/seski-ramadhan_chatbot-app-telegram-activity-7007646714887122945-Fq1B?utm_source=share&utm_medium=member_desktop)
+### **Destroy Application**
+1. Remove all AWS stack
+```
+sls remove
+```
