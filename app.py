@@ -45,7 +45,7 @@ def index():
                 chat_id, txt = parse_message(msg)
                 if txt == "hi":
                     tel_send_message(chat_id, "Hello!!")
-                elif "range" in txt:
+                elif "range" in txt.lower():
                     get_range = txt.split(' ')
                     get_range_expense, sum_total = range_expense(
                         get_range[1], get_range[2])
