@@ -31,15 +31,7 @@ org: PLEASE_CHANGE_THIS_WITH_YOUR_ORGANIZATION
 app: expense-app
 service: expense-app
 ```
-3. Install wsgi plugin 
-```
-serverless plugin install -n serverless-wsgi
-```
-4. Install python requirements plugins
-```
-serverless plugin install -n serverless-python-requirements
-```
-5. Init & deploy serverless framework, and follow instruction
+3. Init & deploy serverless framework, and follow instruction
 ```
 sls
 ```
