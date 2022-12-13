@@ -63,3 +63,6 @@ You can take a look preview [here](https://www.linkedin.com/posts/seski-ramadhan
 ```
 sls remove
 ```
+### **Source**
+1. [Create Telegram Bot Using Python Tutorial With Examples](https://www.pragnakalp.com/create-telegram-bot-using-python-tutorial-with-examples/)
+2. [Extracting Key-Value Pairs from a Form Document](https://docs.aws.amazon.com/textract/latest/dg/examples-extract-kvp.html)
