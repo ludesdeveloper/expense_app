@@ -15,11 +15,6 @@ def insert_expense(expense_id, total, source, date):
 
 
 def range_expense(start, end):
-    # start = datetime.datetime.today() + datetime.timedelta(hours=7)
-    # end = datetime.datetime.today() + datetime.timedelta(hours=7) + \
-    #     datetime.timedelta(days=1)
-    # start = start.strftime('%Y-%m-%d')
-    # end = end.strftime('%Y-%m-%d')
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table(EXPENSE_TABLE)
     response = table.scan(FilterExpression=Attr(
